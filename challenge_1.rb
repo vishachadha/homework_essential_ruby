@@ -18,6 +18,10 @@ def pmt(rate, nper, pv)
   # Your code to implement the method goes here.
   # You shouldn't have to write or change code anywhere else.
   # =========================================================
+  monthly_payment = 0.0
+  monthly_payment = rate * pv/(1- (1+rate)**(-nper))
+  
+  return monthly_payment
 end
 
 # Example usage of the method is below. Uncomment to test your pmt method,
