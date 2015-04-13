@@ -37,3 +37,10 @@ principal_amount = 200000.0
 # loan_quotes.each ...
 
 # ==============================================================
+
+loan_quotes.each do |i|
+  payment_ind = pmt(i["annual_rate"], number_of_monthly_payments, principal_amount)
+  puts "the monthly payment for #{i["bank"]} is $#{payment_ind.round(2)}"
+end
+
+
