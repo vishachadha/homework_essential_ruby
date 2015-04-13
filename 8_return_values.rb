@@ -48,6 +48,11 @@ def mean(list_of_numbers)
   # ====================
   # Your code goes here.
   # ====================
+  count_elements = list_of_numbers.count * 1.0
+  mean = sum(list_of_numbers)/count_elements
+
+  return mean
+
 end
 
 # VARIANCE
@@ -65,6 +70,17 @@ def variance(list_of_numbers)
   # ====================
   # Your code goes here.
   # ====================
+  variance = 0.0
+  #difference = 0.0
+  difference_square = 0.0
+  list_of_numbers.each do |number|
+    difference = number - mean(list_of_numbers)
+    difference_square += difference*difference
+  end
+  variance = difference_square/list_of_numbers.count
+
+  return variance
+
 end
 
 # STANDARD DEVIATION
@@ -76,6 +92,9 @@ def standard_deviation(list_of_numbers)
   # ====================
   # Your code goes here.
   # ====================
+  std_dev = Math.sqrt(variance(list_of_numbers))
+
+  return std_dev
 end
 
 
